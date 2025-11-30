@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OrangeHRM — Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="app-page">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <div class="logo-small">O</div>
+      <span>OrangeHRM</span>
+    </div>
+
+    <nav class="nav">
+      <button class="nav-item" data-route="dashboard">Dashboard</button>
+      <button class="nav-item" data-route="employees">Employees</button>
+      <button class="nav-item" data-route="profile">My Profile</button>
+      <button class="nav-item" data-route="reports">Reports</button>
+      <button class="nav-item" id="logoutBtn">Logout</button>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button id="toggleSidebar" class="icon-btn">☰</button>
+      <h2 id="pageTitle">Dashboard</h2>
+      <div class="top-right">
+        <span class="user-chip">Admin</span>
+      </div>
+    </header>
+
+    <main class="content" id="content">
+      <!-- Dashboard view -->
+      <section id="view-dashboard" class="view active">
+        <div class="cards">
+          <div class="card">
+            <h3>Total Employees</h3>
+            <p id="totalEmployees">—</p>
+          </div>
+          <div class="card">
+            <h3>Open Positions</h3>
+            <p>5</p>
+          </div>
+          <div class="card">
+            <h3>Pending Leaves</h3>
+            <p>2</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Employees view -->
+      <section id="view-employees" class="view">
+        <div class="toolbar">
+          <input id="searchEmp" placeholder="Search employees..." />
+          <button id="addEmpBtn" class="btn-primary">Add Employee</button>
+        </div>
+
+        <table class="table" id="employeesTable">
+          <thead>
+            <tr><th>Name</th><th>Job Title</th><th>Department</th><th>Actions</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <!-- Profile view -->
+      <section id="view-profile" class="view">
+        <div class="profile-card" id="profileCard">
+          <div class="avatar">A</div>
+          <h3 id="profileName">Admin User</h3>
+          <p id="profileEmail">admin@example.com</p>
+          <div class="profile-info">
+            <div><strong>Designation:</strong> HR Manager</div>
+            <div><strong>Location:</strong> Chandigarh</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reports view (placeholder) -->
+      <section id="view-reports" class="view">
+        <p>Reports & analytics coming soon.</p>
+      </section>
+    </main>
+  </div>
+
+  <template id="empRowTpl">
+    <tr>
+      <td class="emp-name"></td>
+      <td class="emp-job"></td>
+      <td class="emp-dept"></td>
+      <td>
+        <button class="btn-sm view-btn">View</button>
+        <button class="btn-sm edit-btn">Edit</button>
+        <button class="btn-sm del-btn">Delete</button>
+      </td>
+    </tr>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>

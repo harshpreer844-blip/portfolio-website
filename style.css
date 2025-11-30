@@ -1,0 +1,273 @@
+:root{
+  --accent:#f39c12; /* orange */
+  --accent-dark:#d68609;
+  --bg:#fff4e6;   /* <-- Updated dashboard background color */
+  --muted:#666;
+  --card:#fff;
+  --glass: rgba(255,255,255,0.6);
+  --maxw:1100px;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* ---- common ---- */
+body{
+  margin:0;
+  background:var(--bg);
+  color:#222;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  margin-bottom:12px;
+}
+/* FIXED btn-primary */
+.btn-primary{
+  background:var(--accent);
+  color:white;
+  border:none;
+  padding:8px 16px;
+  border-radius:9px;
+  cursor:pointer;
+}
+.btn-primary:hover{
+  background:var(--accent-dark);
+}
+
+.icon-btn{
+  background:transparent;
+  border:none;
+  font-size:18px;
+  cursor:pointer;
+}
+
+/* ---- login page ---- */
+.login-page{
+  display:flex;
+  min-height:100vh;
+  align-items:center;
+  justify-content:center;
+}
+
+.login-card{
+  width:360px;
+  padding:28px;
+  background:var(--card);
+  border-radius:9px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.08);
+  text-align:center;
+}
+
+.sidebar-brand{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  margin-bottom:12px;
+}
+
+.logo{
+  background:var(--accent);
+  color:white;
+  height:56px;
+  width:56px;
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  font-size:28px;
+}
+
+.login-card input{
+  width:100%;
+  padding:10px;
+  margin:8px 0 14px;
+  border-radius:6px;
+  border:1px solid #e6e6e6;
+}
+
+.hint{ color:var(--muted); margin-top:10px; }
+
+/* ---- app layout ---- */
+.app-page{
+  display:flex;
+  min-height:100vh;
+}
+
+/* FIXED: removed extra dot (..) */
+.sidebar{
+  width:200px;
+  background:#ff8c42;
+  height:100vh;
+  padding-top:20px;
+  position:fixed;
+  left:0;
+  top:0;
+}
+
+.sidebar button,
+.sidebar a{
+  display:block;
+  width:80%;
+  margin:10px auto;
+  padding:10px;
+  background:white;
+  border:none;
+  border-radius:5px;
+  text-align:left;
+  font-size:16px;
+  cursor:pointer;
+}
+
+.logo-small{
+  background:var(--accent);
+  color:white;
+  width:36px;
+  height:36px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:6px;
+  font-weight:700;
+}
+
+.nav{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.nav-item{
+  background:transparent;
+  border:none;
+  text-align:left;
+  padding:10px 8px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.nav-item:hover{
+  background:#fff8f0;
+}
+
+.main{
+  flex:1;
+  margin-left:200px;
+  display:flex;
+  flex-direction:column;
+}
+
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 20px;
+  background:#fff;
+  border-bottom:1px solid #eee;
+}
+
+.top-right .user-chip{
+  background:#f3f3f3;
+  padding:6px 10px;
+  border-radius:20px;
+}
+
+/* ---- content ---- */
+.content{
+  padding:20px;
+  max-width:var(--maxw);
+  margin:20px auto;
+  width:95%;
+}
+
+.cards{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+
+.card{
+  background:var(--card);
+  flex:1;
+  min-width:180px;
+  padding:18px;
+  border-radius:10px;
+  box-shadow:0 4px 12px rgba(20,20,20,0.03);
+  text-align:center;
+}
+
+.view{ display:none; }
+.view.active{ display:block; }
+
+/* table */
+.table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:12px;
+  background:var(--card);
+  border-radius:8px;
+  overflow:hidden;
+  box-shadow:0 6px 18px rgba(0,0,0,0.04);
+}
+
+.table th,
+.table td{
+  padding:10px 12px;
+  border-bottom:1px solid #f1f1f1;
+  text-align:left;
+}
+
+.table thead th{
+  background:#fafafa;
+  font-weight:600;
+}
+
+/* small buttons */
+.btn-sm{
+  padding:6px 8px;
+  border-radius:6px;
+  border:1px solid #ddd;
+  background:transparent;
+  cursor:pointer;
+  margin-left:6px;
+}
+
+/* profile */
+.profile-card{
+  max-width:420px;
+  background:var(--card);
+  padding:18px;
+  border-radius:10px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.04);
+}
+
+.avatar{
+  height:84px;
+  width:84px;
+  border-radius:50%;
+  background:var(--accent);
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:32px;
+  margin-bottom:12px;
+}
+
+/* responsive */
+@media (max-width:800px){
+  .sidebar{
+    position:fixed;
+    left:-260px;
+    top:0;
+    bottom:0;
+    z-index:40;
+    transition:left .2s;
+  }
+  
+  .sidebar.open{ left:0; }
+  
+  .main{ margin-left:0; }
+}
