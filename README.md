@@ -1,2 +1,2 @@
-# portfolio-website
-My portfolio site using HTML, CSS, JS.
+# Orange HRM demo
+My 🍊 HRM site using HTML, CSS, JS.
